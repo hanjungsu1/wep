@@ -41,7 +41,7 @@ for img in response.find_all('img'):
     image_data = urlopen(image_src).read()
     image = Image.open(BytesIO(image_data))
     photo = ImageTk.PhotoImage(image)
-    image_label = tk.Label(root, text=photo)
+    image_label = tk.Label(root, image=photo)  # 이미지를 출력하기 위해 text 대신 image 속성 사용
     image_label.image = photo  # 윈도우가 종료되어도 이미지가 유지되도록 함
     image_label.pack()
 
